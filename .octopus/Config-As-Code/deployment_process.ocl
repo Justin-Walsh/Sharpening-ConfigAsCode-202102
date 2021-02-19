@@ -47,7 +47,7 @@ steps "GIT - Script" {
     }
 
 
-    actions "GUI - Script" {
+    actions "GIT - Script" {
         action_type = "Octopus.Script"
         notes = "A script with vars to see if the commit will include variables"
         properties = {
