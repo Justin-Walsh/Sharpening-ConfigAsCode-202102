@@ -17,3 +17,26 @@ steps "GUI - Script Step" {
         worker_pool_variable = ""
     }
 }
+
+steps "GUI - Script With Vars" {
+    properties = {
+        Octopus.Action.TargetRoles = "Linux"
+    }
+
+
+    actions "GUI - Script With Vars" {
+        action_type = "Octopus.Script"
+        notes = "A script with vars to see if the commit will include variables"
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Script.ScriptBody = <<-EOT
+                echo $(get_octopusvariable "Greeting")
+                echo $(get_octopusvariable "SecretGreeting")
+            EOT
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "Bash"
+        }
+
+        worker_pool_variable = ""
+    }
+}
