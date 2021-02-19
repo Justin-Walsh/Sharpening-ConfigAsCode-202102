@@ -1,0 +1,19 @@
+steps "GUI - Script Step" {
+    properties = {
+        Octopus.Action.TargetRoles = "Linux"
+    }
+
+
+    actions "GUI - Script Step" {
+        action_type = "Octopus.Script"
+        notes = "A step created in the GUI to show the layout of the CaC files"
+        properties = {
+            Octopus.Action.RunOnServer = "false"
+            Octopus.Action.Script.ScriptBody = "echo \"Hello\""
+            Octopus.Action.Script.ScriptSource = "Inline"
+            Octopus.Action.Script.Syntax = "Bash"
+        }
+
+        worker_pool_variable = ""
+    }
+}
