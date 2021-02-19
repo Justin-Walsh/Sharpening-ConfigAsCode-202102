@@ -49,7 +49,7 @@ steps "GIT - Script" {
 
     actions "GIT - Script" {
         action_type = "Octopus.Script"
-        notes = "A script with vars to see if the commit will include variables"
+        notes = "A script step done via a git commit"
         properties = {
             Octopus.Action.RunOnServer = "false"
             Octopus.Action.Script.ScriptBody = <<-EOT
